@@ -104,12 +104,11 @@ function giveMeThatBoxInfo (id) {
 
         Object.entries(query).forEach((key) => {textBox.append("h5").text(key[0].toUpperCase() + " : " + key[1] + '\n');
         });
-        buildGauge(query.WFREQ);
+        //buildGauge(query.WFREQ);
     });
 };
 
-//Function to refresh everything when we have a change in event.
-
+//Function to refresh everything when we have a change in event. Function to return id is called optionChanged in the html.
 function optionChanged(id) {
     giveMeThosePlost(id);
     giveMeThatBoxInfo(id);
@@ -129,8 +128,8 @@ function init() {
         data.names.forEach(function(name){
             dropOptions.append("option").text(name).property("value");
         });
-
-
+        
+        //initial load uses the first value
         giveMeThosePlost(data.names[0]);
         giveMeThatBoxInfo(data.names[0]);
 
